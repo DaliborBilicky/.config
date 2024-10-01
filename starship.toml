@@ -1,0 +1,146 @@
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_status\
+$c\
+$java\
+$python\
+$nodejs\
+$dotnet\
+$fill\
+$cmd_duration\
+$git_state\
+$username\
+$line_break\
+$character\
+"""
+
+
+[directory]
+truncation_length = 1
+read_only = '󱈸'
+read_only_style = 'fg:#fe8019 bg:#32302f'
+format = """
+[](#b8bb26)\
+[ ](fg:#282828 bg:#b8bb26)\
+[ $path](fg:#b8bb26 bg:#32302f)\
+[$read_only]($read_only_style)\
+[](#32302f) \
+"""
+disabled = false
+use_os_path_sep = false
+truncate_to_repo = false
+
+
+[git_branch]
+truncation_length = 8
+truncation_symbol = '…'
+format = """
+[](#83a598)\
+[ ](fg:#282828 bg:#83a598)\
+[ $branch](fg:#83a598 bg:#32302f)\
+"""
+only_attached = false
+disabled = false
+
+
+[git_commit]
+commit_hash_length = 7
+format = """
+[](#83a598)\
+[ ](fg:#282828 bg:#83a598)\
+[ $hash](fg:#83a598 bg:#32302f)\
+"""
+only_detached = true
+tag_disabled = true
+disabled = false
+
+
+[git_status]
+conflicted = '⚠'
+up_to_date = ''
+untracked = ''
+ahead = '⇡${count}'
+diverged = '⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+stashed = '⊞'
+modified = '*'
+staged = '+$count'
+renamed = '~'
+deleted = ''
+format = """
+[$all_status$ahead_behind](fg:#d3869b bg:#32302f)\
+[](#32302f) \
+"""
+
+
+[c]
+detect_extensions = ['c', 'cpp', 'h', 'hpp']
+format = '[ $name $version](#a89984) '
+
+
+[java]
+format = '[ $version](#a89984) '
+
+
+[python]
+format = '[󰌠 $version $virtualenv](#a89984) '
+
+
+[nodejs]
+format = '[ $version](#a89984) '
+
+
+[dotnet]
+format = '[󰪮 $version](#a89984) '
+
+
+[fill]
+symbol = ' '
+
+
+[cmd_duration]
+min_time = 1000
+format = """
+[](#fabd2f)\
+[ ](fg:#282828 bg:#fabd2f)\
+[ $duration](fg:#fabd2f bg:#32302f)\
+[](#32302f) \
+"""
+
+
+[git_state]
+rebase = 'REBASE'
+merge = 'MERGE'
+revert = 'REVERT'
+cherry_pick = 'CHERRY PICK'
+bisect = 'BISECT'
+am = 'AM'
+am_or_rebase = 'AM/REBA'
+format = """
+[](#fe8019)\
+[ ](fg:#282828 bg:#fe8019)\
+[ $state](fg:#fe8019 bg:#32302f)\
+[](#32302f) \
+"""
+disabled = false
+
+
+[username]
+format = """
+[](#fe8019)\
+[ ](fg:#282828 bg:#fe8019)\
+[ ROOT](fg:#fe8019 bg:#32302f)\
+[](#32302f) \
+"""
+disabled = false
+show_always = false 
+
+
+[character]
+success_symbol = '[](#bdae93)'
+error_symbol = '[](#bdae93)'
+vimcmd_symbol = '[](#bdae93)'
