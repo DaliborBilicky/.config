@@ -7,6 +7,12 @@ return {
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
+				"json",
+				"javascript",
+				"typescript",
+				"html",
+				"css",
+				"dockerfile",
 				"vimdoc",
 				"query",
 				"vim",

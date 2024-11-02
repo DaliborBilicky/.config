@@ -41,5 +41,20 @@ return {
 			capabilities = capabilities,
 			handlers = handlers,
 		})
+
+		lspconfig["html"].setup({
+			capabilities = capabilities,
+			handlers = handlers,
+		})
+
+		lspconfig["cssls"].setup({
+			capabilities = capabilities,
+			handlers = handlers,
+		})
+
+		lspconfig["emmet_language_server"].setup({
+			capabilities = capabilities,
+			handlers = handlers,
+		})
 	end,
 }
