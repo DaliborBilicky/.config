@@ -1,0 +1,92 @@
+add_newline = false
+
+format = """
+$python\
+$c\
+$character\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status """
+
+
+[python]
+# format = '\([󰌠 ](#bdae93)[$version( $virtualenv)](#fabd2f)\)'
+format = '(\([󰌠 ](#bdae93)[$virtualenv](#fabd2f)\))'
+
+
+[c]
+detect_extensions = ['c', 'cpp', 'h', 'hpp']
+# format = '\([ ](#bdae93)[$name $version](#83a598)\)'
+format = '\([ ](#bdae93)[$name](#83a598)\)'
+
+
+[java]
+format = '\([ ](#bdae93)[$version](#fabd2f)\)'
+
+
+[nodejs]
+format = '\([ ](#b8bb26)[$version](#a89984)\)'
+
+
+[dotnet]
+format = '\([󰪮 ](#bdae93)[$version](#d3869b)\)'
+
+
+[character]
+success_symbol = '[ ➜](#bdae93)'
+error_symbol = '[ ➜](#bdae93)'
+
+
+[directory]
+truncation_length = 1
+read_only = '󱈸'
+read_only_style = '#fe8019'
+format = '[$path](fg:#8ec07c)[$read_only]($read_only_style)'
+disabled = false
+use_os_path_sep = false
+truncate_to_repo = false
+
+
+[git_branch]
+truncation_length = 8
+truncation_symbol = '…'
+format = '\([ ](#bdae93)[$branch](#83a598)'
+only_attached = false
+disabled = false
+
+
+[git_commit]
+commit_hash_length = 7
+format = '\([ ](#bdae93)[$hash](#83a598)'
+only_detached = true
+tag_disabled = true
+disabled = false
+
+
+[git_state]
+rebase = ' '
+merge = ''
+revert = ' '
+cherry_pick = '󱁂 '
+bisect = ' '
+am = ' '
+am_or_rebase = ' / '
+format = '[$state](#fe8019)'
+disabled = false
+
+
+[git_status]
+conflicted = '⚠'
+up_to_date = ''
+untracked = ''
+ahead = '↑${count}'
+diverged = '↑${ahead_count}↓${behind_count}'
+behind = '↓${count}'
+stashed = '⊞'
+modified = '*'
+staged = '+$count'
+renamed = '~'
+deleted = ''
+format = '[$all_status$ahead_behind](#d3869b)\)'

@@ -1,0 +1,114 @@
+format = """
+[](color_orange)\
+$username\
+[](bg:color_yellow fg:color_orange)\
+$directory\
+[](fg:color_yellow bg:color_aqua)\
+$git_branch\
+$git_status\
+[](fg:color_aqua bg:color_blue)\
+$c\
+$nodejs\
+$java\
+$python\
+$dotnet\
+[](fg:color_blue bg:color_bg3)\
+$docker_context\
+$conda\
+[](fg:color_bg3 bg:color_bg1)\
+$cmd_duration\
+[ ](fg:color_bg1)\
+$line_break$character"""
+
+palette = 'gruvbox_dark'
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+[username]
+show_always = true
+format = '[󰣛 $user](bg:color_orange fg:color_fg0)'
+
+[directory]
+read_only = '󰌾 '
+format = "[ $read_only$path](fg:color_fg0 bg:color_yellow)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+truncation_length = 8
+truncation_symbol = '…'
+format = '[  $branch](fg:color_fg0 bg:color_aqua)'
+only_attached = false
+disabled = false
+
+[git_commit]
+commit_hash_length = 7
+format = '[  $hash](fg:color_fg0 bg:color_aqua)'
+only_detached = true
+tag_disabled = true
+disabled = false
+
+[git_state]
+rebase = ' '
+merge = ''
+revert = ' '
+cherry_pick = '󱁂 '
+bisect = ' '
+am = ' '
+am_or_rebase = ' / '
+format = '[$state](fg:color_fg0 bg:color_aqua)'
+disabled = false
+
+[git_status]
+conflicted = '⚠'
+up_to_date = ''
+untracked = ''
+ahead = '↑${count}'
+diverged = '↑${ahead_count}↓${behind_count}'
+behind = '↓${count}'
+stashed = '⊞'
+modified = '*'
+staged = '+$count'
+renamed = '~'
+deleted = ''
+format = '[$all_status$ahead_behind](fg:color_fg0 bg:color_aqua)'
+
+[nodejs]
+format = '[  ($version)](fg:color_fg0 bg:color_blue)'
+
+[c]
+format = '[  ($name $version)](fg:color_fg0 bg:color_blue)'
+
+[java]
+format = '[  ($version)](fg:color_fg0 bg:color_blue)'
+
+[python]
+format = '[  (($virtualenv)$version)](fg:color_fg0 bg:color_blue)'
+
+[dotnet]
+format = '[ 󰪮 ($version)](fg:color_fg0 bg:color_blue)'
+
+[docker_context]
+format = '[  ($context)](fg:color_fg0 bg:color_bg3)'
+
+[cmd_duration]
+min_time = 1000
+format = '[  $duration](fg:color_fg0 bg:color_bg1)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '\$'
+error_symbol = '\$'
