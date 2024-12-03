@@ -4,6 +4,7 @@ format = """
 $directory\
 $git_branch\
 $git_commit\
+$git_state\
 $git_status\
 $c\
 $java\
@@ -12,8 +13,6 @@ $nodejs\
 $dotnet\
 $fill\
 $cmd_duration\
-$git_state\
-$username\
 $line_break\
 $character\
 """
@@ -56,6 +55,18 @@ format = """
 """
 only_detached = true
 tag_disabled = true
+disabled = false
+
+
+[git_state]
+rebase = ' '
+merge = ''
+revert = ' '
+cherry_pick = '󱁂 '
+bisect = ' '
+am = ' '
+am_or_rebase = ' / '
+format = '[$state](fg:#fe8019 bg:#32302f)'
 disabled = false
 
 
@@ -110,36 +121,8 @@ format = """
 [ $duration](fg:#fabd2f bg:#32302f)\
 [](#32302f) \
 """
-
-
-[git_state]
-rebase = 'REBASE'
-merge = 'MERGE'
-revert = 'REVERT'
-cherry_pick = 'CHERRY PICK'
-bisect = 'BISECT'
-am = 'AM'
-am_or_rebase = 'AM/REBA'
-format = """
-[](#fe8019)\
-[ ](fg:#282828 bg:#fe8019)\
-[ $state](fg:#fe8019 bg:#32302f)\
-[](#32302f) \
-"""
-disabled = false
-
-
-[username]
-format = """
-[](#fe8019)\
-[ ](fg:#282828 bg:#fe8019)\
-[ ROOT](fg:#fe8019 bg:#32302f)\
-[](#32302f) \
-"""
-disabled = false
-show_always = false 
-
  
+
 [character]
-success_symbol = '[](#bdae93)'
-error_symbol = '[](#bdae93)'
+success_symbol = '[](#bdae93)'
+error_symbol = '[](#bdae93)'

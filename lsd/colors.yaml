@@ -1,0 +1,38 @@
+user: white # Replacing 230 with dark_red
+group: grey # Replacing 187 with dark_yellow
+permission:
+  read: dark_green # Keep as is
+  write: dark_yellow # Keep as is
+  exec: dark_red # Keep as is
+  exec-sticky: dark_magenta # Replacing 5 with dark_magenta
+  no-access: dark_grey # Replacing 245 with dark_grey
+  octal: dark_cyan # Replacing 6 with dark_cyan
+  acl: dark_cyan # Keep as is
+  context: cyan # Keep as is
+date:
+  hour-old: green # Replacing 40 with dark_yellow
+  day-old: cyan # Replacing 42 with yellow
+  older: dark_cyan # Replacing 36 with cyan
+size:
+  none: dark_grey # Replacing 245 with dark_grey
+  small: yellow # Replacing 229 with dark_yellow
+  medium: cyan # Replacing 216 with dark_cyan
+  large: green # Replacing 172 with dark_green
+inode:
+  valid: magenta # Replacing 13 with dark_red
+  invalid: dark_grey # Replacing 245 with dark_grey
+links:
+  valid: magenta # Replacing 13 with dark_red
+  invalid: dark_grey # Replacing 245 with dark_grey
+tree-edge: dark_grey # Replacing 245 with dark_grey
+git-status:
+  default: dark_grey # Replacing 245 with dark_grey
+  unmodified: dark_grey # Replacing 245 with dark_grey
+  ignored: dark_grey # Replacing 245 with dark_grey
+  new-in-index: dark_green # Keep as is
+  new-in-workdir: dark_green # Keep as is
+  typechange: dark_yellow # Keep as is
+  deleted: dark_red # Keep as is
+  renamed: dark_green # Keep as is
+  modified: dark_yellow # Keep as is
+  conflicted: dark_red # Keep as is
