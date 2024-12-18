@@ -1,6 +1,7 @@
 add_newline = true
 
 format = """
+$username\
 $directory\
 $git_branch\
 $git_commit\
@@ -18,16 +19,43 @@ $character\
 """
 
 
+palette = 'gruvbox'
+
+[palettes.gruvbox]
+fg3 = '#bdae93'
+bg0_s = '#32302f'
+bg1 = '#3c3836'
+blue = '#83a598'
+aqua = '#8ec07c'
+green = '#b8bb26'
+orange = '#fe8019'
+purple = '#d3869b'
+red = '#cc241d'
+yellow = '#fabd2f'
+
+
+[username]
+format = """
+[](green)\
+[󰣛 ](fg:bg0_s bg:green)\
+[ $user](fg:green bg:bg1)\
+[$read_only]($read_only_style)\
+[](bg1) \
+"""
+disabled = false
+show_always = true
+
+
 [directory]
 truncation_length = 1
 read_only = '󱈸'
-read_only_style = 'fg:#fe8019 bg:#32302f'
+read_only_style = 'fg:orange bg:bg1'
 format = """
-[](#b8bb26)\
-[ ](fg:#282828 bg:#b8bb26)\
-[ $path](fg:#b8bb26 bg:#32302f)\
+[](aqua)\
+[ ](fg:bg0_s bg:aqua)\
+[ $path](fg:aqua bg:bg1)\
 [$read_only]($read_only_style)\
-[](#32302f) \
+[](bg1) \
 """
 disabled = false
 use_os_path_sep = false
@@ -38,9 +66,9 @@ truncate_to_repo = false
 truncation_length = 8
 truncation_symbol = '…'
 format = """
-[](#83a598)\
-[ ](fg:#282828 bg:#83a598)\
-[ $branch](fg:#83a598 bg:#32302f)\
+[](blue)\
+[ ](fg:bg0_s bg:blue)\
+[ $branch](fg:blue bg:bg1)\
 """
 only_attached = false
 disabled = false
@@ -49,9 +77,9 @@ disabled = false
 [git_commit]
 commit_hash_length = 7
 format = """
-[](#83a598)\
-[ ](fg:#282828 bg:#83a598)\
-[ $hash](fg:#83a598 bg:#32302f)\
+[](blue)\
+[ ](fg:bg0_s bg:blue)\
+[ $hash](fg:blue bg:bg1)\
 """
 only_detached = true
 tag_disabled = true
@@ -66,7 +94,7 @@ cherry_pick = '󱁂 '
 bisect = ' '
 am = ' '
 am_or_rebase = ' / '
-format = '[$state](fg:#fe8019 bg:#32302f)'
+format = '[$state](fg:orange bg:bg1)'
 disabled = false
 
 
@@ -83,30 +111,30 @@ staged = '+$count'
 renamed = '~'
 deleted = ''
 format = """
-[$all_status$ahead_behind](fg:#d3869b bg:#32302f)\
-[](#32302f) \
+[$all_status$ahead_behind](fg:purple bg:bg1)\
+[](bg1) \
 """
 
 
 [c]
 detect_extensions = ['c', 'cpp', 'h', 'hpp']
-format = '[ $name $version](#a89984) '
+format = '[ $name $version](fg3) '
 
 
 [java]
-format = '[ $version](#a89984) '
+format = '[ $version](fg3) '
 
 
 [python]
-format = '[󰌠 $version $virtualenv](#a89984) '
+format = '[󰌠 $version (\($virtualenv\))](fg3) '
 
 
 [nodejs]
-format = '[ $version](#a89984) '
+format = '[ $version](fg3) '
 
 
 [dotnet]
-format = '[󰪮 $version](#a89984) '
+format = '[󰪮 $version](fg3) '
 
 
 [fill]
@@ -116,10 +144,10 @@ symbol = ' '
 [cmd_duration]
 min_time = 1000
 format = """
-[](#fabd2f)\
-[ ](fg:#282828 bg:#fabd2f)\
-[ $duration](fg:#fabd2f bg:#32302f)\
-[](#32302f) \
+[](yellow)\
+[ ](fg:bg0_s bg:yellow)\
+[ $duration](fg:yellow bg:bg1)\
+[](bg1) \
 """
  
 

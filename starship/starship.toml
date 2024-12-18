@@ -1,58 +1,56 @@
+add_newline = false
+
 format = """
-[](fg:color_orange)\
+[](fg:orange)\
 $username\
-[](fg:color_orange bg:color_yellow)\
+[](fg:orange bg:yellow)\
 $directory\
-[](fg:color_yellow bg:color_blue)\
+$python\
+[](fg:yellow bg:blue)\
 $git_branch\
 $git_commit\
 $git_state\
 $git_status\
-[](fg:color_blue bg:color_bg2)\
+[](fg:blue bg:bg2)\
 $cmd_duration\
-[ ](fg:color_bg2)\
-$c\
-$nodejs\
-$java\
-$python\
-$dotnet\
+[](fg:bg2)\
 $line_break$character"""
 
 palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
-color_fg1 = '#ebdbb2'
-color_fg2 = '#d5c4a1'
-color_bg1 = '#3c3836'
-color_bg2 = '#504945'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#d3869b'
-color_red = '#cc241d'
-color_yellow = '#d79921'
+fg1 = '#ebdbb2'
+fg2 = '#d5c4a1'
+bg1 = '#3c3836'
+bg2 = '#504945'
+blue = '#458588'
+aqua = '#689d6a'
+green = '#98971a'
+orange = '#d65d0e'
+purple = '#b16286'
+red = '#cc241d'
+yellow = '#d79921'
 
 [username]
 show_always = true
-format = '[󰣛 $user](bg:color_orange fg:color_fg1)'
+format = '[󰣛 $user](bg:orange fg:fg1)'
 
 [directory]
 read_only = '󰌾 '
-format = "[ $read_only$path](fg:color_fg1 bg:color_yellow)"
-truncation_length = 2
+format = "[ $read_only$path](fg:fg1 bg:yellow)"
+truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 truncation_length = 8
 truncation_symbol = '…'
-format = '[  $branch](fg:color_fg1 bg:color_blue)'
+format = '[  $branch](fg:fg1 bg:blue)'
 only_attached = false
 disabled = false
 
 [git_commit]
 commit_hash_length = 7
-format = '[  $hash](fg:color_fg1 bg:color_blue)'
+format = '[  $hash](fg:fg1 bg:blue)'
 only_detached = true
 tag_disabled = true
 disabled = false
@@ -65,7 +63,7 @@ cherry_pick = '󱁂 '
 bisect = ' '
 am = ' '
 am_or_rebase = ' / '
-format = '[$state](fg:color_fg1 bg:color_blue)'
+format = '[$state](fg:fg1 bg:blue)'
 disabled = false
 
 [git_status]
@@ -80,29 +78,30 @@ modified = '*'
 staged = '+$count'
 renamed = '~'
 deleted = ''
-format = '[$all_status$ahead_behind](fg:color_fg1 bg:color_blue)'
+format = '[$all_status$ahead_behind](fg:fg1 bg:blue)'
 
 [nodejs]
-format = '[  $version](fg:color_fg2)'
+format = '[  $version](fg:fg2)'
 
 [c]
-format = '[  $name $version](fg:color_fg2)'
+format = '[  $name $version](fg:fg2)'
 
 [java]
-format = '[  $version](fg:color_fg2)'
+format = '[  $version](fg:fg2)'
 
 [python]
-format = '[  $version(\($virtualenv\))](fg:color_fg2)'
+# format = '[  $version(\($virtualenv\))](fg:fg2)'
+format = '[(\($virtualenv\))](fg:fg1 bg:yellow)'
 
 [dotnet]
-format = '[ 󰪮 $version](fg:color_fg2)'
+format = '[ 󰪮 $version](fg:fg2)'
 
 # [docker_context]
-# format = '[  ($context)](fg:color_fg1 bg:color_bg2)'
+# format = '[  ($context)](fg:fg1 bg:bg2)'
 
 [cmd_duration]
 min_time = 1000
-format = '[  $duration](fg:color_fg1 bg:color_bg2)'
+format = '[  $duration](fg:fg1 bg:bg2)'
 
 [line_break]
 disabled = false

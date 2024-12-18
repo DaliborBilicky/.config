@@ -1,0 +1,87 @@
+
+2024/12/16 (12:21:39) | ===> btop++ v.1.4.0
+2024/12/16 (12:21:39) | INFO: Logger set to DEBUG
+2024/12/16 (12:21:40) | INFO: Logger set to INFO
+2024/12/16 (12:21:49) | INFO: Logger set to DEBUG
+2024/12/16 (12:21:51) | INFO: Logger set to INFO
+2024/12/16 (12:22:04) | INFO: Logger set to DEBUG
+2024/12/16 (12:22:04) | INFO: Logger set to INFO
+2024/12/16 (12:22:49) | INFO: Logger set to DEBUG
+2024/12/16 (12:22:52) | INFO: Logger set to INFO
+2024/12/16 (12:22:53) | INFO: Logger set to DEBUG
+2024/12/16 (12:23:06) | DEBUG: Loading theme file: /usr/share/btop/themes/HotPurpleTrafficLight.theme
+2024/12/16 (12:23:07) | DEBUG: Loading theme file: /usr/share/btop/themes/adapta.theme
+2024/12/16 (12:23:08) | DEBUG: Loading theme file: /usr/share/btop/themes/adwaita.theme
+2024/12/16 (12:23:09) | DEBUG: Loading theme file: /usr/share/btop/themes/ayu.theme
+2024/12/16 (12:23:09) | DEBUG: Loading theme file: /usr/share/btop/themes/dracula.theme
+2024/12/16 (12:23:10) | DEBUG: Loading theme file: /usr/share/btop/themes/dusklight.theme
+2024/12/16 (12:23:10) | DEBUG: Loading theme file: /usr/share/btop/themes/elementarish.theme
+2024/12/16 (12:23:11) | DEBUG: Loading theme file: /usr/share/btop/themes/everforest-dark-hard.theme
+2024/12/16 (12:23:12) | DEBUG: Loading theme file: /usr/share/btop/themes/everforest-dark-medium.theme
+2024/12/16 (12:23:13) | DEBUG: Loading theme file: /usr/share/btop/themes/flat-remix-light.theme
+2024/12/16 (12:23:13) | DEBUG: Loading theme file: /usr/share/btop/themes/flat-remix.theme
+2024/12/16 (12:23:14) | DEBUG: Loading theme file: /usr/share/btop/themes/greyscale.theme
+2024/12/16 (12:23:14) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark.theme
+2024/12/16 (12:23:16) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:23:17) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_light.theme
+2024/12/16 (12:23:18) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_material_dark.theme
+2024/12/16 (12:23:20) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_light.theme
+2024/12/16 (12:23:20) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:23:21) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark.theme
+2024/12/16 (12:23:21) | DEBUG: Loading theme file: /usr/share/btop/themes/greyscale.theme
+2024/12/16 (12:23:22) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark.theme
+2024/12/16 (12:23:22) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:23:23) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark.theme
+2024/12/16 (12:23:24) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:23:24) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark.theme
+2024/12/16 (12:23:25) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:24:14) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark.theme
+2024/12/16 (12:24:28) | DEBUG: Loading theme file: /usr/share/btop/themes/greyscale.theme
+2024/12/16 (12:24:28) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark.theme
+2024/12/16 (12:24:28) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:24:29) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_light.theme
+2024/12/16 (12:24:37) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:25:48) | DEBUG: Writing new config file
+2024/12/16 (12:25:48) | INFO: Quitting! Runtime: 00:06:17
+
+2024/12/16 (12:26:16) | ===> btop++ v.1.4.0
+2024/12/16 (12:26:16) | INFO: Logger set to DEBUG
+2024/12/16 (12:26:16) | DEBUG: Using locale en_US.UTF-8
+2024/12/16 (12:26:16) | INFO: Running on /dev/pts/0
+2024/12/16 (12:26:16) | INFO: Failed to load libnvidia-ml.so, NVIDIA GPUs will not be detected: libnvidia-ml.so.1: cannot open shared object file: No such file or directory
+2024/12/16 (12:26:16) | INFO: Failed to load librocm_smi64.so, AMD GPUs will not be detected: librocm_smi64.so.6: cannot open shared object file: No such file or directory
+2024/12/16 (12:26:16) | DEBUG: Failed to find Intel GPU sysfs path, Intel GPUs will not be detected
+2024/12/16 (12:26:16) | DEBUG: Shared::init() : Initialized.
+2024/12/16 (12:26:16) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:27:50) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:27:51) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:27:52) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:27:53) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:28:31) | DEBUG: Writing new config file
+2024/12/16 (12:28:31) | ERROR: Exception during Config::unlock() : unordered_map::at
+2024/12/16 (12:28:31) | INFO: Quitting! Runtime: 00:02:15
+
+2024/12/16 (12:28:40) | ===> btop++ v.1.4.0
+2024/12/16 (12:28:40) | INFO: Logger set to DEBUG
+2024/12/16 (12:28:40) | DEBUG: Using locale en_US.UTF-8
+2024/12/16 (12:28:40) | INFO: Running on /dev/pts/0
+2024/12/16 (12:28:40) | INFO: Failed to load libnvidia-ml.so, NVIDIA GPUs will not be detected: libnvidia-ml.so.1: cannot open shared object file: No such file or directory
+2024/12/16 (12:28:40) | INFO: Failed to load librocm_smi64.so, AMD GPUs will not be detected: librocm_smi64.so.6: cannot open shared object file: No such file or directory
+2024/12/16 (12:28:40) | DEBUG: Failed to find Intel GPU sysfs path, Intel GPUs will not be detected
+2024/12/16 (12:28:40) | DEBUG: Shared::init() : Initialized.
+2024/12/16 (12:28:40) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:28:46) | DEBUG: Writing new config file
+2024/12/16 (12:28:46) | ERROR: Exception during Config::unlock() : unordered_map::at
+2024/12/16 (12:28:46) | INFO: Quitting! Runtime: 00:00:06
+
+2024/12/16 (12:28:51) | ===> btop++ v.1.4.0
+2024/12/16 (12:28:51) | INFO: Logger set to DEBUG
+2024/12/16 (12:28:51) | DEBUG: Using locale en_US.UTF-8
+2024/12/16 (12:28:51) | INFO: Running on /dev/pts/0
+2024/12/16 (12:28:51) | INFO: Failed to load libnvidia-ml.so, NVIDIA GPUs will not be detected: libnvidia-ml.so.1: cannot open shared object file: No such file or directory
+2024/12/16 (12:28:51) | INFO: Failed to load librocm_smi64.so, AMD GPUs will not be detected: librocm_smi64.so.6: cannot open shared object file: No such file or directory
+2024/12/16 (12:28:51) | DEBUG: Failed to find Intel GPU sysfs path, Intel GPUs will not be detected
+2024/12/16 (12:28:51) | DEBUG: Shared::init() : Initialized.
+2024/12/16 (12:28:51) | DEBUG: Loading theme file: /usr/share/btop/themes/gruvbox_dark_v2.theme
+2024/12/16 (12:34:05) | DEBUG: Writing new config file
+2024/12/16 (12:34:05) | INFO: Quitting! Runtime: 00:05:14

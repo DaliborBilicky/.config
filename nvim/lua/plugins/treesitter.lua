@@ -12,7 +12,6 @@ return {
 				"typescript",
 				"html",
 				"css",
-				"dockerfile",
 				"vimdoc",
 				"query",
 				"vim",
