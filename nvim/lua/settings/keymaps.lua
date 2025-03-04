@@ -1,5 +1,17 @@
 vim.g.mapleader = " "
 
+local toggleSpellLang = function()
+	if vim.o.spelllang == "sk" then
+		vim.o.spelllang = "en"
+		print("Spell checking set to English")
+	else
+		vim.o.spelllang = "sk"
+		print("Spell checking set to Slovak")
+	end
+end
+
+vim.keymap.set("n", "<leader>ts", toggleSpellLang)
+
 local formatOnSave = function()
 	vim.api.nvim_command("lua vim.lsp.buf.format()")
 	vim.api.nvim_command("write!")
