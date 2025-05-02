@@ -27,6 +27,16 @@ unset rc
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export EDITOR="nvim"
 export TERMINAL="kitty"
+export FZF_DEFAULT_OPTS='
+	--prompt="ƒ: " --pointer="➜" --marker="+"
+	--layout=reverse --height=40% --border
+	--color=fg:#ebdbb2,bg:#282828
+	--color=fg+:#b8bb26,bg+:#282828
+	--color=hl:#fe8019,hl+:#fe8019
+	--color=info:#bdae93,header:#ebdbb2
+	--color=prompt:#bdae93,pointer:#bdae93
+	--color=marker:#fabd2f,spinner:#d3869b
+	--bind=alt-k:up,alt-j:down'
 
 alias vim='nvim'
 alias vi='nvim'
