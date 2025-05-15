@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IGNORE_LIST=("bash" "kitty" "lsd" "nvim" "starship" "confupdate.sh")
+IGNORE_LIST=("bash" "kitty" "lsd" "nvim" "starship" "tmux" "confupdate.sh")
 
 if [ ! -d ".git" ]; then
     echo "Error: This is not a Git repository!"
