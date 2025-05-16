@@ -1,6 +1,7 @@
 .git
 abrt
 #bash
+btop
 dconf
 evolution
 gnome-session

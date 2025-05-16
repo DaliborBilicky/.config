@@ -14,42 +14,42 @@ local colors = {
 	green = "#b8bb26",
 	blue = "#83a598",
 	yellow = "#fe8019",
-	gray = "#a89984",
+	gray = "#504945",
+	lightgray = "#a89984",
 	darkgray = "#3c3836",
-	lightgray = "#504945",
 	inactivegray = "#7c6f64",
 }
 
 local gruv = {
 	normal = {
-		a = { bg = colors.gray, fg = colors.black, gui = "bold" },
-		b = { bg = colors.lightgray, fg = colors.white },
-		c = { fg = colors.gray },
+		a = { bg = colors.lightgray, fg = colors.black, gui = "bold" },
+		b = { bg = colors.gray, fg = colors.white },
+		c = { fg = colors.lightgray },
 	},
 	insert = {
 		a = { bg = colors.blue, fg = colors.black, gui = "bold" },
-		b = { bg = colors.lightgray, fg = colors.white },
-		c = { fg = colors.gray },
+		b = { bg = colors.gray, fg = colors.white },
+		c = { fg = colors.lightgray },
 	},
 	visual = {
 		a = { bg = colors.yellow, fg = colors.black, gui = "bold" },
-		b = { bg = colors.lightgray, fg = colors.white },
-		c = { fg = colors.gray },
+		b = { bg = colors.gray, fg = colors.white },
+		c = { fg = colors.lightgray },
 	},
 	replace = {
 		a = { bg = colors.red, fg = colors.black, gui = "bold" },
-		b = { bg = colors.lightgray, fg = colors.white },
-		c = { fg = colors.gray },
+		b = { bg = colors.gray, fg = colors.white },
+		c = { fg = colors.lightgray },
 	},
 	command = {
 		a = { bg = colors.green, fg = colors.black, gui = "bold" },
-		b = { bg = colors.lightgray, fg = colors.white },
-		c = { fg = colors.gray },
+		b = { bg = colors.gray, fg = colors.white },
+		c = { fg = colors.lightgray },
 	},
 	inactive = {
-		a = { bg = colors.darkgray, fg = colors.gray, gui = "bold" },
-		b = { bg = colors.darkgray, fg = colors.gray },
-		c = { fg = colors.gray },
+		a = { bg = colors.darkgray, fg = colors.lightgray, gui = "bold" },
+		b = { bg = colors.darkgray, fg = colors.lightgray },
+		c = { fg = colors.lightgray },
 	},
 }
 return {
