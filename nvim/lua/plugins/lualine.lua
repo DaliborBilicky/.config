@@ -13,7 +13,7 @@ local colors = {
 	red = "#fb4934",
 	green = "#b8bb26",
 	blue = "#83a598",
-	yellow = "#fe8019",
+	orange = "#fe8019",
 	gray = "#504945",
 	lightgray = "#a89984",
 	darkgray = "#3c3836",
@@ -22,34 +22,34 @@ local colors = {
 
 local gruv = {
 	normal = {
-		a = { bg = colors.lightgray, fg = colors.black, gui = "bold" },
-		b = { bg = colors.gray, fg = colors.white },
-		c = { fg = colors.lightgray },
+		a = { bg = colors.darkgray, fg = colors.white, gui = "bold" },
+		b = { bg = colors.darkgray, fg = colors.white },
+		c = { bg = colors.darkgray, fg = colors.lightgray },
 	},
 	insert = {
-		a = { bg = colors.blue, fg = colors.black, gui = "bold" },
-		b = { bg = colors.gray, fg = colors.white },
-		c = { fg = colors.lightgray },
+		a = { bg = colors.darkgray, fg = colors.blue, gui = "bold" },
+		b = { bg = colors.darkgray, fg = colors.white },
+		c = { bg = colors.darkgray, fg = colors.lightgray },
 	},
 	visual = {
-		a = { bg = colors.yellow, fg = colors.black, gui = "bold" },
-		b = { bg = colors.gray, fg = colors.white },
-		c = { fg = colors.lightgray },
+		a = { bg = colors.darkgray, fg = colors.orange, gui = "bold" },
+		b = { bg = colors.darkgray, fg = colors.white },
+		c = { bg = colors.darkgray, fg = colors.lightgray },
 	},
 	replace = {
-		a = { bg = colors.red, fg = colors.black, gui = "bold" },
-		b = { bg = colors.gray, fg = colors.white },
-		c = { fg = colors.lightgray },
+		a = { bg = colors.darkgray, fg = colors.red, gui = "bold" },
+		b = { bg = colors.darkgray, fg = colors.white },
+		c = { bg = colors.darkgray, fg = colors.lightgray },
 	},
 	command = {
-		a = { bg = colors.green, fg = colors.black, gui = "bold" },
-		b = { bg = colors.gray, fg = colors.white },
-		c = { fg = colors.lightgray },
+		a = { bg = colors.darkgray, fg = colors.green, gui = "bold" },
+		b = { bg = colors.darkgray, fg = colors.white },
+		c = { bg = colors.darkgray, fg = colors.lightgray },
 	},
 	inactive = {
 		a = { bg = colors.darkgray, fg = colors.lightgray, gui = "bold" },
 		b = { bg = colors.darkgray, fg = colors.lightgray },
-		c = { fg = colors.lightgray },
+		c = { bg = colors.darkgray, fg = colors.inactivegray },
 	},
 }
 return {
@@ -59,7 +59,7 @@ return {
 			options = {
 				theme = gruv,
 				component_separators = "",
-				section_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
 				symbols = { error = " ", warn = " ", hint = " ", info = " " },
 			},
 			sections = {
