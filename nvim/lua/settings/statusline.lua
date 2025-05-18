@@ -29,6 +29,13 @@ function _G.MyStatusLine()
 		end
 	end
 
+	local recording = vim.fn.reg_recording()
+	if recording == "" then
+		recording = ""
+	else
+		recording = string.format("recording @%s", recording)
+	end
+
 	local function count_diag(severity)
 		return #vim.diagnostic.get(0, { severity = severity })
 	end
@@ -48,10 +55,11 @@ function _G.MyStatusLine()
 	local location = string.format("%d:%d", line, vim.fn.col("."))
 
 	return string.format(
-		"%%#MyStatusLine# %s %s  %s %%= %s  %d%%%% %s ",
+		"%%#MyStatusLine# %s %s  %s %s %%= %s  %d%%%% %s ",
 		mode,
 		filename,
 		diff,
+		recording,
 		diagnostics,
 		progress,
 		location
