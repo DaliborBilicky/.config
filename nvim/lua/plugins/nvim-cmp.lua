@@ -1,4 +1,3 @@
-vim.api.nvim_set_hl(0, "CmpCursorLine", { bg = "#3c3836" })
 return {
 	"hrsh7th/nvim-cmp",
 	event = { "InsertEnter", "CmdlineEnter" },
@@ -91,7 +90,7 @@ return {
 			},
 			window = {
 				completion = cmp.config.window.bordered({
-					winhighlight = "CursorLine:CmpCursorLine",
+					winhighlight = "CursorLine:CursorLine",
 					scrollbar = false,
 				}),
 				documentation = cmp.config.window.bordered({ scrollbar = false }),

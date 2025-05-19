@@ -1,5 +1,3 @@
-vim.api.nvim_set_hl(0, "MyStatusLine", { fg = "#ebdbb2", bg = "#3c3836" })
-
 function _G.MyStatusLine()
 	local mode_map = {
 		n = "N",
@@ -55,7 +53,7 @@ function _G.MyStatusLine()
 	local location = string.format("%d:%d", line, vim.fn.col("."))
 
 	return string.format(
-		"%%#MyStatusLine# %s %s  %s %s %%= %s  %d%%%% %s ",
+		"%%#CursorLine# %s %s  %s %s %%= %s  %d%%%% %s ",
 		mode,
 		filename,
 		diff,
