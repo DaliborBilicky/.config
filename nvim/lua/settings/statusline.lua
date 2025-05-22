@@ -15,6 +15,7 @@ function _G.MyStatusLine()
 		Rv = "R",
 		t = "T",
 	}
+
 	local mode = mode_map[vim.fn.mode()] or "U"
 
 	local filename = vim.fn.expand("%:t")
@@ -23,7 +24,7 @@ function _G.MyStatusLine()
 	if vim.b.gitsigns_status_dict then
 		local gsd = vim.b.gitsigns_status_dict
 		if (gsd.added or 0) > 0 or (gsd.changed or 0) > 0 or (gsd.removed or 0) > 0 then
-			diff = string.format("+%s ~%s -%s", gsd.added or 0, gsd.changed or 0, gsd.removed or 0)
+			diff = string.format(" %s  %s  %s", gsd.added or 0, gsd.changed or 0, gsd.removed or 0)
 		end
 	end
 
