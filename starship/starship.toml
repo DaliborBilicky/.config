@@ -11,30 +11,30 @@ $git_status """
 
 
 [python]
-format = '(\([󰌠 ](#bdae93)[$virtualenv](#fabd2f)\))'
+format = '(\([󰌠 ](bright-white)[$virtualenv](bright-yellow)\))'
 
 
 [character]
-success_symbol = '[ ➜](#bdae93)'
-error_symbol = '[ ➜](#bdae93)'
+success_symbol = '[ ➜](bright-white)'
+error_symbol = '[ ➜](bright-white)'
 
 
 [directory]
 truncation_length = 1
 read_only = '󱈸'
-read_only_style = '#fe8019'
-format = '[$path](fg:#b8bb26)[$read_only]($read_only_style)'
+read_only_style = 'bright-red'
+format = '[$path](bright-green)[$read_only]($read_only_style)'
 
 
 [git_branch]
 truncation_length = 8
 truncation_symbol = '…'
-format = '\([ ](#bdae93)[$branch](#83a598)'
+format = '\([ ](bright-white)[$branch](bright-blue)'
 
 
 [git_commit]
 commit_hash_length = 7
-format = '\([ ](#bdae93)[$hash](#83a598)'
+format = '\([ ](bright-white)[$hash](bright-blue)'
 only_detached = true
 tag_disabled = true
 
@@ -47,7 +47,7 @@ cherry_pick = '󱁂 '
 bisect = ' '
 am = ' '
 am_or_rebase = ' / '
-format = '[$state](#fe8019)'
+format = '[$state](bright-purple)'
 
 
 [git_status]
@@ -62,4 +62,4 @@ modified = '*'
 staged = '+$count'
 renamed = '~'
 deleted = ''
-format = '[$all_status$ahead_behind](#d3869b)\)'
+format = '[$all_status$ahead_behind](bright-purple)\)'
