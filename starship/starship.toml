@@ -22,7 +22,7 @@ error_symbol = '[ ➜](bright-white)'
 [directory]
 truncation_length = 1
 read_only = '󱈸'
-read_only_style = 'bright-red'
+read_only_style = '#fe8019'
 format = '[$path](bright-green)[$read_only]($read_only_style)'
 
 
@@ -47,7 +47,7 @@ cherry_pick = '󱁂 '
 bisect = ' '
 am = ' '
 am_or_rebase = ' / '
-format = '[$state](bright-purple)'
+format = '[$state](#fe8019)'
 
 
 [git_status]
