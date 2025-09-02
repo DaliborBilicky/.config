@@ -19,5 +19,13 @@ return {
 				height = 0.80,
 			},
 		})
+
+		mason_lspconfig.setup({
+			automatic_enable = {
+				exclude = {
+					"jdtls",
+				},
+			},
+		})
 	end,
 }

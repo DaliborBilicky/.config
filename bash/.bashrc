@@ -46,5 +46,6 @@ alias ll='lsd -al --group-directories-first'
 alias lll='lsd -al --group-directories-first --blocks permission,user,group,size,date,name'
 
 test -s ~/.alias && . ~/.alias || true
-eval "$(zoxide init bash)"
 eval "$(starship init bash)"
+export _ZO_DOCTOR=0
+eval "$(zoxide init bash)"

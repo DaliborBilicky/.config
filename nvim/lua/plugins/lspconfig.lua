@@ -37,13 +37,11 @@ return {
 			handlers = handlers,
 		})
 
-		local omnisharp_bin = vim.fn.stdpath("data") .. "/mason/packages/omnisharp/OmniSharp"
-
-		lspconfig["omnisharp"].setup({
-			cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
-			root_dir = require("lspconfig.util").root_pattern("*.sln", "*.csproj", ".git"),
-			capabilities = capabilities,
-			handlers = handlers,
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "java",
+			callback = function(args)
+				require("jdtls.jdtls_setup").setup()
+			end,
 		})
 	end,
 }
