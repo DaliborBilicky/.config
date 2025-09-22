@@ -27,12 +27,12 @@ return {
 			virtual_text = false,
 		})
 
-		lspconfig["clangd"].setup({
+		vim.lsp.config("clangd", {
 			capabilities = capabilities,
 			handlers = handlers,
 		})
 
-		lspconfig["pyright"].setup({
+		vim.lsp.config("pyright", {
 			capabilities = capabilities,
 			handlers = handlers,
 		})
