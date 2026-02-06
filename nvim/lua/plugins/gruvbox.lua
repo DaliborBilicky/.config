@@ -49,6 +49,7 @@ return {
 				["@constant.builtin"] = { link = "Constant" },
 				["@string.escape"] = { link = "Boolean" },
 				["@string.special"] = { link = "Boolean" },
+				["@string.documentation"] = { link = "Comment" },
 			},
 			dim_inactive = false,
 			transparent_mode = true,

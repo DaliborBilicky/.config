@@ -90,10 +90,14 @@ return {
 			},
 			window = {
 				completion = cmp.config.window.bordered({
+					border = "rounded",
 					winhighlight = "CursorLine:CursorLine",
 					scrollbar = false,
 				}),
-				documentation = cmp.config.window.bordered({ scrollbar = false }),
+				documentation = cmp.config.window.bordered({
+					border = "rounded",
+					scrollbar = false,
+				}),
 			},
 			cmp.setup.cmdline({ "/", "?" }, {
 				mapping = cmp.mapping.preset.cmdline(),

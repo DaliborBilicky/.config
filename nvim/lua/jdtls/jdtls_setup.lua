@@ -10,7 +10,7 @@ function M:setup()
 		or error("Unsupported OS: " .. os_name)
 
 	local mason_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
-	local launcher_jar = mason_path .. "/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar"
+	local launcher_jar = mason_path .. "/plugins/org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar"
 	local config_dir = mason_path .. "/config_" .. os_config
 	local workspace_dir = vim.fn.stdpath("data") .. "/jdtls-workspace/" .. project_name
 
@@ -24,6 +24,12 @@ function M:setup()
 	local config = {
 		cmd = {
 			"java",
+			"-Xmx1g",
+			"--add-modules=ALL-SYSTEM",
+			"--add-opens",
+			"java.base/java.util=ALL-UNNAMED",
+			"--add-opens",
+			"java.base/java.lang=ALL-UNNAMED",
 			"-Declipse.application=org.eclipse.jdt.ls.core.id1",
 			"-Dosgi.bundles.defaultStartLevel=4",
 			"-Declipse.product=org.eclipse.jdt.ls.core.product",
