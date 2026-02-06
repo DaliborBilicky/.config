@@ -10,7 +10,7 @@ fi
 > .gitignore
 
 if [ -d "$HOME/.config" ]; then
-	ls -1 $HOME/.config | grep -v -e '^.$' -e '^..$' >> .gitignore
+    ls -1 "$HOME/.config" >> .gitignore
 else
     echo "Warning: .config directory not found!"
 fi
@@ -21,6 +21,7 @@ done
 
 echo "Updated .gitignore:"
 cat .gitignore
+
 git add .
 git commit
 git push origin main
