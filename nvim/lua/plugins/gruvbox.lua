@@ -1,59 +1,18 @@
 return {
-	"ellisonleao/gruvbox.nvim",
+	"sainnhe/gruvbox-material",
+	lazy = false,
 	priority = 1000,
 	config = function()
-		require("gruvbox").setup({
-			terminal_colors = true,
-			undercurl = true,
-			underline = true,
-			bold = true,
-			italic = {},
-			strikethrough = true,
-			invert_selection = false,
-			invert_signs = false,
-			invert_tabline = false,
-			invert_intend_guides = false,
-			inverse = true,
-			contrast = "",
-			palette_overrides = { light0 = "#ebdbb2" },
-			overrides = {
-				FloatBorder = { fg = "#928374" },
-
-				TelescopePromptPrefix = { fg = "#7c6f64" },
-				TelescopePromptCounter = { fg = "#7c6f64" },
-				TelescopeMultiSelection = { fg = "#fabd2f" },
-				TelescopeSelectionCaret = { link = "CursorLine" },
-				TelescopeSelection = { link = "CursorLine" },
-				TelescopeMatching = { fg = "#b8bb26" },
-				TelescopePromptBorder = { link = "FloatBorder" },
-				TelescopePreviewBorder = { link = "FloatBorder" },
-				TelescopeResultsBorder = { link = "FloatBorder" },
-
-				Delimiter = { fg = "#ebdbb2" },
-				Operator = { fg = "#ebdbb2" },
-				Keyword = { fg = "#fe8019" },
-				Label = { fg = "#ebdbb2", italic = true },
-				Boolean = { fg = "#d3869b", italic = true },
-				Repeat = { link = "Keyword" },
-				Exception = { link = "Keyword" },
-				Conditional = { link = "Keyword" },
-
-				["@variable.builtin"] = { italic = true },
-				["@variable.parameter"] = { italic = true },
-				["@lsp.type.parameter"] = { italic = true },
-				["@type.builtin"] = { fg = "#fabd2f", italic = true },
-				["@keyword.operator"] = { link = "Keyword" },
-				["@character.special"] = { link = "Character" },
-				["@function.builtin"] = { link = "Function" },
-				["@constructor"] = { link = "Function" },
-				["@constant.builtin"] = { link = "Constant" },
-				["@string.escape"] = { link = "Boolean" },
-				["@string.special"] = { link = "Boolean" },
-				["@string.documentation"] = { link = "Comment" },
-			},
-			dim_inactive = false,
-			transparent_mode = true,
-		})
-		vim.cmd.colorscheme("gruvbox")
+		vim.g.gruvbox_material_enable_italic = 1
+		vim.g.gruvbox_material_transparent_background = 2
+		vim.g.gruvbox_material_diagnostic_text_highlight = 1
+		vim.g.gruvbox_material_foreground = "original"
+		vim.g.gruvbox_material_float_style = "blend"
+		vim.g.gruvbox_material_ui_contrast = "high"
+		vim.cmd.colorscheme("gruvbox-material")
+		vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3c3836" })
+		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ebdbb2", bg = "#3c3836" })
+		vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { fg = "#7c6f64" })
+		vim.api.nvim_set_hl(0, "TelescopeSelection", { link = "CursorLine" })
 	end,
 }

@@ -1,65 +1,94 @@
 add_newline = false
 
 format = """
+$username\
+$hostname\
 $python\
-$character\
 $directory\
 $git_branch\
 $git_commit\
+$git_status\
+${custom.closing}\
 $git_state\
-$git_status """
+${custom.twodot}\
+$line_break\
+$character"""
+
+
+[username]
+format = '[$user](bright-purple italic)[.](#7c6f64)'
+disabled = false
+show_always = true
+
+
+[hostname]
+ssh_only = false
+format = '[$hostname](bright-blue)[ = ](#fe8019)'
+disabled = false
 
 
 [python]
-format = '(\([󰌠 ](bright-white)[$virtualenv](bright-yellow)\))'
-
-
-[character]
-success_symbol = '[ ➜](bright-white)'
-error_symbol = '[ ➜](bright-white)'
+format = '([$virtualenv](bright-red) )'
 
 
 [directory]
 truncation_length = 1
+truncation_symbol = ''
 read_only = '󱈸'
-read_only_style = '#fe8019'
-format = '[$path](bright-green)[$read_only]($read_only_style)'
+format = '[$read_only$path](bright-green)\('
 
 
 [git_branch]
-truncation_length = 8
+truncation_length = 6
 truncation_symbol = '…'
-format = '\([ ](bright-white)[$branch](bright-blue)'
+format = '[$branch](bright-purple italic)'
 
 
 [git_commit]
 commit_hash_length = 7
-format = '\([ ](bright-white)[$hash](bright-blue)'
+format = '[$hash](bright-purple italic)'
 only_detached = true
 tag_disabled = true
 
 
-[git_state]
-rebase = ' '
-merge = ''
-revert = ' '
-cherry_pick = '󱁂 '
-bisect = ' '
-am = ' '
-am_or_rebase = ' / '
-format = '[$state](#fe8019)'
-
-
 [git_status]
-conflicted = '⚠'
 up_to_date = ''
-untracked = ''
-ahead = '↑${count}'
-diverged = '↑${ahead_count}↓${behind_count}'
-behind = '↓${count}'
-stashed = '⊞'
-modified = '*'
-staged = '+$count'
-renamed = '~'
-deleted = ''
-format = '[$all_status$ahead_behind](bright-purple)\)'
+ahead = '[↑](bright-purple)'
+diverged = '[↕](bright-purple)'
+behind = '[↓](bright-purple)'
+conflicted = '[, ](#7c6f64)cnf[: ](#7c6f64)[$count](bright-yellow)'
+untracked = '[, ](#7c6f64)unt[: ](#7c6f64)[$count](bright-yellow)'
+stashed = '[, ](#7c6f64)sth'
+modified = '[, ](#7c6f64)mod[: ](#7c6f64)[$count](bright-yellow)'
+staged = '[, ](#7c6f64)stg[: ](#7c6f64)[$count](bright-yellow)'
+renamed = '[, ](#7c6f64)rnm[: ](#7c6f64)[$count](bright-yellow)'
+deleted = '[, ](#7c6f64)del[: ](#7c6f64)[$count](bright-yellow)'
+format = '$ahead_behind$all_status'
+
+
+[git_state]
+rebase = 'Rebase'
+merge = 'Merge'
+revert = 'Revert'
+cherry_pick = 'CherryPick'
+bisect = 'Bisect'
+am = 'AM'
+am_or_rebase = 'AMRebase'
+format = '[ -> ](#fe8019)[$state](fg:bright-yellow italic)'
+
+
+[custom.twodot]
+when = true
+format = "[$output](#7c6f64)"
+command = "echo -n ':'"
+
+
+[custom.closing]
+when = true
+format = "$output"
+command = "echo -n ')'"
+
+
+[character]
+success_symbol = '>>>'
+error_symbol = '>>>'
