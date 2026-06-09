@@ -2,68 +2,71 @@ add_newline = false
 
 format = """
 $username\
-$hostname\
-$python\
 $directory\
+$python\
+$cmake\
+$java\
 $git_branch\
 $git_commit\
 $git_status\
-${custom.closing}\
 $git_state\
-${custom.twodot}\
 $line_break\
 $character"""
 
 
 [username]
-format = '[$user](bright-purple italic)[.](#7c6f64)'
+format = '[󰣛 ](#d5c4a1)[:](#928374)[$user](bright-blue) '
 disabled = false
 show_always = true
-
-
-[hostname]
-ssh_only = false
-format = '[$hostname](bright-blue)[ = ](#fe8019)'
-disabled = false
-
-
-[python]
-format = '([$virtualenv](bright-red) )'
 
 
 [directory]
 truncation_length = 1
 truncation_symbol = ''
 read_only = '󱈸'
-format = '[$read_only$path](bright-green)\('
+format = '[in ](#fe8019)[ ](#d5c4a1)[:](#928374)[$read_only$path](bright-cyan) '
+
+
+[python]
+format = '([is ](#fe8019)[ ](#d5c4a1)[:](#928374)[$virtualenv](bright-yellow) )'
+
+
+[cmake]
+format = '[is ](#fe8019)[ ](#d5c4a1)[:](#928374)[cmake](bright-yellow) '
+
+
+[java]
+format = '[is ](#fe8019)[ ](#d5c4a1)[:](#928374)[maven](bright-yellow) '
+detect_extensions = []
+detect_files = ['pom.xml']
 
 
 [git_branch]
 truncation_length = 6
 truncation_symbol = '…'
-format = '[$branch](bright-purple italic)'
+format = '[as ](bright-red)[ ](#d5c4a1)[:](#928374)[$branch](bright-green)'
 
 
 [git_commit]
 commit_hash_length = 7
-format = '[$hash](bright-purple italic)'
+format = '[as ](bright-red)[](#d5c4a1)[:](#928374)[$hash](bright-green)'
 only_detached = true
 tag_disabled = true
 
 
 [git_status]
-up_to_date = ''
-ahead = '[↑](bright-purple)'
-diverged = '[↕](bright-purple)'
-behind = '[↓](bright-purple)'
-conflicted = '[, ](#7c6f64)cnf[: ](#7c6f64)[$count](bright-yellow)'
-untracked = '[, ](#7c6f64)unt[: ](#7c6f64)[$count](bright-yellow)'
-stashed = '[, ](#7c6f64)sth'
-modified = '[, ](#7c6f64)mod[: ](#7c6f64)[$count](bright-yellow)'
-staged = '[, ](#7c6f64)stg[: ](#7c6f64)[$count](bright-yellow)'
-renamed = '[, ](#7c6f64)rnm[: ](#7c6f64)[$count](bright-yellow)'
-deleted = '[, ](#7c6f64)del[: ](#7c6f64)[$count](bright-yellow)'
-format = '$ahead_behind$all_status'
+ahead = '[↑](bright-green)'
+behind = '[↓](bright-green)'
+diverged = '[↕](bright-green)'
+conflicted = '[!](#fe8019)[$count](bright-purple)'
+untracked = '[?](#fe8019)[$count](bright-purple)'
+stashed = '[=](#fe8019)[$count](bright-purple)'
+modified = '[*](#fe8019)[$count](bright-purple)'
+staged = '[+](#fe8019)[$count](bright-purple)'
+renamed = '[~](#fe8019)[$count](bright-purple)'
+deleted = '[x](#fe8019)[$count](bright-purple)'
+typechanged = '[T](#fe8019)[$count](bright-purple)'
+format = '($ahead_behind\($all_status\))'
 
 
 [git_state]
@@ -74,21 +77,9 @@ cherry_pick = 'CherryPick'
 bisect = 'Bisect'
 am = 'AM'
 am_or_rebase = 'AMRebase'
-format = '[ -> ](#fe8019)[$state](fg:bright-yellow italic)'
-
-
-[custom.twodot]
-when = true
-format = "[$output](#7c6f64)"
-command = "echo -n ':'"
-
-
-[custom.closing]
-when = true
-format = "$output"
-command = "echo -n ')'"
+format = '[ -> ](#fe8019)[$state](fg:bright-purple italic)'
 
 
 [character]
-success_symbol = '>>>'
-error_symbol = '>>>'
+success_symbol = ''
+error_symbol = ''
