@@ -10,7 +10,7 @@ function M:setup()
 		or error("Unsupported OS: " .. os_name)
 
 	local mason_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
-	local launcher_jar = mason_path .. "/plugins/org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar"
+	local launcher_jar = mason_path .. "/plugins/org.eclipse.equinox.launcher_1.7.200.v20260619-2039.jar"
 	local config_dir = mason_path .. "/config_" .. os_config
 	local workspace_dir = vim.fn.stdpath("data") .. "/jdtls-workspace/" .. project_name
 

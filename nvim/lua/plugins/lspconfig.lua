@@ -5,42 +5,50 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
-
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
 		local capabilities = cmp_nvim_lsp.default_capabilities()
-
-		local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
-		-- diagnostic nvim 12
-
-		local handlers = {
-			["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-			["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
-		}
 
 		vim.diagnostic.config({
 			float = { border = "rounded" },
 			virtual_text = false,
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = " ",
+					[vim.diagnostic.severity.WARN] = " ",
+					[vim.diagnostic.severity.HINT] = " ",
+					[vim.diagnostic.severity.INFO] = " ",
+				},
+			},
 		})
+
+		local handlers = {
+			["textDocument/hover"] = function(err, result, ctx, config)
+				config = config or {}
+				config.border = "rounded"
+				vim.lsp.handlers.hover(err, result, ctx, config)
+			end,
+			["textDocument/signatureHelp"] = function(err, result, ctx, config)
+				config = config or {}
+				config.border = "rounded"
+				vim.lsp.handlers.signature_help(err, result, ctx, config)
+			end,
+		}
 
 		vim.lsp.config("clangd", {
 			capabilities = capabilities,
 			handlers = handlers,
 		})
+		vim.lsp.enable("clangd")
 
 		vim.lsp.config("pyright", {
 			capabilities = capabilities,
 			handlers = handlers,
 		})
+		vim.lsp.enable("pyright")
 
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = "java",
-			callback = function(args)
+			callback = function()
 				require("jdtls.jdtls_setup").setup()
 			end,
 		})

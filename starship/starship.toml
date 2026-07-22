@@ -15,7 +15,7 @@ $character"""
 
 
 [username]
-format = '[󰣛 ](#d5c4a1)[:](#928374)[$user](bright-blue) '
+format = '[󰣛 ](#d5c4a1)[:](#928374)[$user](bright-cyan) '
 disabled = false
 show_always = true
 
@@ -24,7 +24,7 @@ show_always = true
 truncation_length = 1
 truncation_symbol = ''
 read_only = '󱈸'
-format = '[in ](#fe8019)[ ](#d5c4a1)[:](#928374)[$read_only$path](bright-cyan) '
+format = '[in ](#fe8019)[ ](#d5c4a1)[:](#928374)[$read_only$path](bright-blue) '
 
 
 [python]
@@ -66,7 +66,7 @@ staged = '[+](#fe8019)[$count](bright-purple)'
 renamed = '[~](#fe8019)[$count](bright-purple)'
 deleted = '[x](#fe8019)[$count](bright-purple)'
 typechanged = '[T](#fe8019)[$count](bright-purple)'
-format = '($ahead_behind\($all_status\))'
+format = '($ahead_behind(\($all_status\)))'
 
 
 [git_state]

@@ -4,6 +4,10 @@ return {
 	config = function()
 		local null_ls = require("null-ls")
 		local helpers = require("null-ls.helpers")
+
+		local mason_bin = vim.fn.stdpath("data") .. "/mason/bin"
+		vim.env.PATH = mason_bin .. ":" .. vim.env.PATH
+
 		local tex_fmt_custom = {
 			name = "tex-fmt",
 			method = null_ls.methods.FORMATTING,
@@ -14,6 +18,7 @@ return {
 				to_stdin = true,
 			}),
 		}
+
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
