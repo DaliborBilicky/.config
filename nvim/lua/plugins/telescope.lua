@@ -10,7 +10,7 @@ return {
 
 		telescope.setup({
 			defaults = {
-				prompt_prefix = "  ",
+				prompt_prefix = " ",
 				selection_caret = "⠀", --empty char
 				multi_icon = "",
 				path_display = { "smart", "truncate" },

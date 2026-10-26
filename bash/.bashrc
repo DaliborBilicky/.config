@@ -52,3 +52,6 @@ export _ZO_DOCTOR=0
 eval "$(zoxide init bash)"
 
 eval "$(starship init bash)"
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

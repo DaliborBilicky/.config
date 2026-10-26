@@ -14,5 +14,7 @@ return {
 		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ebdbb2", bg = "#3c3836" })
 		vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { fg = "#7c6f64" })
 		vim.api.nvim_set_hl(0, "TelescopeSelection", { link = "CursorLine" })
+		vim.api.nvim_set_hl(0, "@variable.parameter", { italic = true })
+		vim.api.nvim_set_hl(0, "@lsp.type.parameter", { italic = true })
 	end,
 }

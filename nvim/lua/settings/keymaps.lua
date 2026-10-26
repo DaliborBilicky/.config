@@ -1,5 +1,27 @@
 vim.g.mapleader = " "
 
+local send_to_sqlcl = function()
+	vim.cmd('normal! "sy')
+	local text = vim.fn.getreg("s")
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if vim.bo[buf].buftype == "terminal" then
+			local chan = vim.b[buf].terminal_job_id
+			if chan then
+				vim.api.nvim_chan_send(chan, "CLEAR SCREEN\n")
+				vim.api.nvim_chan_send(chan, text .. "\n")
+				local win = vim.fn.bufwinid(buf)
+				if win ~= -1 then
+					local line_count = vim.api.nvim_buf_line_count(buf)
+					vim.api.nvim_win_set_cursor(win, { line_count, 0 })
+				end
+				return
+			end
+		end
+	end
+end
+
+vim.keymap.set("v", "<leader>e", send_to_sqlcl)
+
 local toggleSpellLang = function()
 	if vim.o.spelllang == "sk" then
 		vim.o.spelllang = "en"
@@ -13,8 +35,8 @@ end
 vim.keymap.set("n", "<leader>ts", toggleSpellLang)
 
 local formatOnSave = function()
-	vim.api.nvim_command("lua vim.lsp.buf.format()")
-	vim.api.nvim_command("write!")
+	vim.lsp.buf.format()
+	vim.cmd("write!")
 end
 
 vim.keymap.set("n", "<leader>w", formatOnSave)

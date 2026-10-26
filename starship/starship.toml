@@ -5,7 +5,7 @@ $username\
 $directory\
 $python\
 $cmake\
-$java\
+$gradle\
 $git_branch\
 $git_commit\
 $git_status\
@@ -35,10 +35,8 @@ format = '([is ](#fe8019)[ ](#d5c4a1)[:](#928374)[$virtualenv](bright-yellow)
 format = '[is ](#fe8019)[ ](#d5c4a1)[:](#928374)[cmake](bright-yellow) '
 
 
-[java]
-format = '[is ](#fe8019)[ ](#d5c4a1)[:](#928374)[maven](bright-yellow) '
-detect_extensions = []
-detect_files = ['pom.xml']
+[gradle]
+format = '[is ](#fe8019)[ ](#d5c4a1)[:](#928374)[gradle](bright-yellow) '
 
 
 [git_branch]

@@ -10,7 +10,8 @@ function M:setup()
 		or error("Unsupported OS: " .. os_name)
 
 	local mason_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
-	local launcher_jar = mason_path .. "/plugins/org.eclipse.equinox.launcher_1.7.200.v20260619-2039.jar"
+	local launcher_jar = mason_path .. "/plugins/org.eclipse.equinox.launcher_1.8.0.v20260804-1928.jar"
+
 	local config_dir = mason_path .. "/config_" .. os_config
 	local workspace_dir = vim.fn.stdpath("data") .. "/jdtls-workspace/" .. project_name
 
@@ -35,7 +36,7 @@ function M:setup()
 			"-Declipse.product=org.eclipse.jdt.ls.core.product",
 			"-Dlog.protocol=true",
 			"-Dlog.level=ALL",
-			"-Xmx1g",
+			"-Xmx2g",
 			"-jar",
 			launcher_jar,
 			"-configuration",
@@ -45,7 +46,11 @@ function M:setup()
 		},
 		root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
 		settings = {
-			java = {},
+			java = {
+				build = {
+					outputDir = "build/classes",
+				},
+			},
 		},
 		init_options = {
 			bundles = {},
