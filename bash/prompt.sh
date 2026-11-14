@@ -1,6 +1,6 @@
-# Track whether a command was actually run since the last prompt
+# Track whether a real command was run (ignore PROMPT_COMMAND itself)
 __prompt_ran_cmd=1
-trap '__prompt_ran_cmd=1' DEBUG
+trap '[[ "$BASH_COMMAND" != "__build_prompt" ]] && __prompt_ran_cmd=1' DEBUG
 
 __last_git_dir=""
 __last_git_dirty=0
@@ -44,7 +44,7 @@ __build_prompt() {
     [[ -n "$VIRTUAL_ENV" ]] && out+="${c_yellow}${VIRTUAL_ENV##*/} ${c_reset}"
 
     # 3. Character & Current Working Directory name only
-    out+="${c_gray}➜ ${c_reset}"
+    out+="${c_gray}➜${c_reset}"
     local short_dir="${PWD/#$HOME/\~}"
     [[ "$short_dir" != "/" && "$short_dir" != "~" ]] && short_dir="${short_dir##*/}"
     out+="${c_green}${short_dir}${c_reset}"
@@ -54,7 +54,7 @@ __build_prompt() {
         local head branch="" raw_branch="" local_sha=""
         IFS= read -r head < "$git_dir/HEAD"
 
-        # A. Branch or Detached Commit (Pure .git read)
+        # A. Branch or Detached Commit (Pure .git read, 0ms)
         if [[ "$head" == ref:\ * ]]; then
             raw_branch="${head#ref: refs/heads/}"
             branch="$raw_branch"
@@ -74,7 +74,7 @@ __build_prompt() {
             out+="(${c_blue}${head:0:7}${c_reset}"
         fi
 
-        # B. Local vs Origin Divergence '~' (Pure .git read)
+        # B. Local vs Origin Divergence '~' (Pure .git read, 0ms)
         local indicators=""
         if [[ -n "$local_sha" && -n "$raw_branch" ]]; then
             local origin_sha=""
@@ -93,21 +93,24 @@ __build_prompt() {
             fi
         fi
 
-        # C. Ultra-Fast Status Check '*' (Git State + Working Tree)
+        # C. Fastest-to-Slowest Status Check '*' (Short-circuits on first hit)
         local is_dirty=0
         if [[ -f "$git_dir/index.lock" || -d "$git_dir/rebase-merge" || \
               -d "$git_dir/rebase-apply" || -f "$git_dir/MERGE_HEAD" || \
               -f "$git_dir/REVERT_HEAD" || -f "$git_dir/CHERRY_PICK_HEAD" || \
               -f "$git_dir/BISECT_LOG" ]]; then
-            # Tier 1: Active git state or index lock (~0ms, pure Bash)
+            # Tier 1: Active git state or index lock (~0ms, 0 forks)
             is_dirty=1
         elif [[ "$git_dir" == "$__last_git_dir" && $__prompt_ran_cmd -eq 0 ]]; then
-            # Tier 2: Empty Enter pressed in same repo (~0ms, cached)
+            # Tier 2: Empty Enter pressed in same repo (~0ms, 0 forks)
             is_dirty=$__last_git_dirty
+        elif [[ -n "$local_sha" ]] && ! git diff-index --quiet HEAD -- 2>/dev/null; then
+            # Tier 3: Tracked changes - exits in C on 1st dirty file (~1-2ms, 1 fork)
+            is_dirty=1
         else
-            # Tier 3: Single git call, reads 1 byte & stops immediately (~1-3ms)
+            # Tier 4: Untracked files - stops at directory level & 1st byte (~2-4ms)
             local first_char=""
-            IFS= read -rn 1 first_char < <(git status --porcelain -unormal --ignore-submodules=dirty 2>/dev/null)
+            IFS= read -rn 1 first_char < <(git ls-files --others --exclude-standard --directory --no-empty-directory 2>/dev/null)
             [[ -n "$first_char" ]] && is_dirty=1
         fi
 
@@ -115,7 +118,7 @@ __build_prompt() {
         __last_git_dirty=$is_dirty
         [[ $is_dirty -eq 1 ]] && indicators+="*"
 
-        # D. Stash check '=' (Pure .git check)
+        # D. Stash check '=' (Pure .git check, 0ms)
         [[ -f "$git_dir/refs/stash" ]] && indicators+="="
 
         [[ -n "$indicators" ]] && out+="${c_purple}${indicators}${c_reset}"
