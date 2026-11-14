@@ -1,83 +1,75 @@
 add_newline = false
 
 format = """
-$username\
-$directory\
-$python\
 $cmake\
-$gradle\
+$java\
+$python\
+$character\
+$directory\
 $git_branch\
 $git_commit\
-$git_status\
 $git_state\
-$line_break\
-$character"""
+$git_status """
 
 
-[username]
-format = '[󰣛 ](#d5c4a1)[:](#928374)[$user](bright-cyan) '
-disabled = false
-show_always = true
+[cmake]
+format = '[cmake ](italic #fabd2f)'
+
+
+[java]
+detect_files = ['pom.xml']
+format = '[mvn ](italic #fabd2f)'
+
+
+[python]
+format = '([$virtualenv ](italic #fabd2f))'
+
+
+[character]
+success_symbol = '[➜](#a89984)'
+error_symbol = '[➜](#a89984)'
 
 
 [directory]
 truncation_length = 1
-truncation_symbol = ''
 read_only = '󱈸'
-format = '[in ](#fe8019)[ ](#d5c4a1)[:](#928374)[$read_only$path](bright-blue) '
-
-
-[python]
-format = '([is ](#fe8019)[ ](#d5c4a1)[:](#928374)[$virtualenv](bright-yellow) )'
-
-
-[cmake]
-format = '[is ](#fe8019)[ ](#d5c4a1)[:](#928374)[cmake](bright-yellow) '
-
-
-[gradle]
-format = '[is ](#fe8019)[ ](#d5c4a1)[:](#928374)[gradle](bright-yellow) '
+format = '[$read_only](#fe8019)[$path](#b8bb26)'
 
 
 [git_branch]
-truncation_length = 6
+truncation_length = 8
 truncation_symbol = '…'
-format = '[as ](bright-red)[ ](#d5c4a1)[:](#928374)[$branch](bright-green)'
+format = '\([$branch](#83a598)'
 
 
 [git_commit]
 commit_hash_length = 7
-format = '[as ](bright-red)[](#d5c4a1)[:](#928374)[$hash](bright-green)'
+format = '\([$hash](#83a598)'
 only_detached = true
 tag_disabled = true
 
 
-[git_status]
-ahead = '[↑](bright-green)'
-behind = '[↓](bright-green)'
-diverged = '[↕](bright-green)'
-conflicted = '[!](#fe8019)[$count](bright-purple)'
-untracked = '[?](#fe8019)[$count](bright-purple)'
-stashed = '[=](#fe8019)[$count](bright-purple)'
-modified = '[*](#fe8019)[$count](bright-purple)'
-staged = '[+](#fe8019)[$count](bright-purple)'
-renamed = '[~](#fe8019)[$count](bright-purple)'
-deleted = '[x](#fe8019)[$count](bright-purple)'
-typechanged = '[T](#fe8019)[$count](bright-purple)'
-format = '($ahead_behind(\($all_status\)))'
-
-
 [git_state]
-rebase = 'Rebase'
-merge = 'Merge'
-revert = 'Revert'
-cherry_pick = 'CherryPick'
-bisect = 'Bisect'
-am = 'AM'
-am_or_rebase = 'AMRebase'
-format = '[ -> ](#fe8019)[$state](fg:bright-purple italic)'
+rebase = "RBS"
+merge = "MRG"
+revert = "RVT"
+cherry_pick = "PCK"
+bisect = "BSC"
+am = "AM "
+am_or_rebase = "AMR"
+format = ' [$state](#d3869b)'
 
 
-[character]
-success_symbol = ''
-error_symbol = ''
+[git_status]
+ahead = '↑'
+behind = '↓'
+diverged = '↕'
+conflicted = '!'
+untracked = '?'
+stashed = '='
+modified = '*'
+staged = '+'
+renamed = '~'
+deleted = 'x'
+typechanged = 'T'
+format = '[$ahead_behind$all_status](#d3869b)\)'
