@@ -44,7 +44,7 @@ __build_prompt() {
     [[ -n "$VIRTUAL_ENV" ]] && out+="${c_yellow}${VIRTUAL_ENV##*/} ${c_reset}"
 
     # 3. Character & Current Working Directory name only
-    out+="${c_gray}➜${c_reset}"
+    out+="${c_gray}➜ ${c_reset}"
     local short_dir="${PWD/#$HOME/\~}"
     [[ "$short_dir" != "/" && "$short_dir" != "~" ]] && short_dir="${short_dir##*/}"
     out+="${c_green}${short_dir}${c_reset}"
